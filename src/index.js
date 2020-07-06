@@ -1,6 +1,6 @@
 // set up variables
 const Discord = require('discord.js');
-const config = require('./config.json');
+const config = require('../utils/config.json');
 const client = new Discord.Client();
 
 // launches node server
