@@ -14,6 +14,8 @@ module.exports = {
       !hello: a simple greeting to human kind from AI\n
       !help: displays the current prompt you are reading.\n
       !weather: TODO gets the current weather at your location.\n
+      !sing: I learned a song from my creator Mr. Langly, while I was developed \
+      at H.A.L labs in Urbana, Illinois.\n
       TODO more methods will be added`);
     }
     else if (command === 'sing'){
