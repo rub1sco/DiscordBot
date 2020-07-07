@@ -22,7 +22,7 @@ client.on('message', message => {
   if(!message.content.startsWith(process.env.PREFIX) || message.author.bot){return;}
 
   // splits by space ' ' and does not error with multiple spaces.
-  const args = message.content.slice(prefix.length).split(/ +/);
+  const args = message.content.slice(process.env.PREFIX.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
   // handles all incoming events and passes to functions.js
