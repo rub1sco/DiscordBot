@@ -1,7 +1,9 @@
 // set up variables
 const Discord = require('discord.js');
-const config = require('../utils/config.json');
+const {prefix, token} = require('../utils/config.json');
+var functions = require('./functions.js');
 const client = new Discord.Client();
+
 
 // launches node server
 client.once('ready', () => {
@@ -10,14 +12,18 @@ client.once('ready', () => {
 
 // logs into server with token.
 // TODO make token secret before git push or heroku
-client.login(config.token);
+client.login(token);
 
 
 // on can trigger multiple times
 // receives every message in channel.
 client.on('message', message => {
-  // console.log(message.content);
-  if(message.content === "!hello"){
-    message.channel.send('Hello human.')
-  }
-})
+  if(!message.content.startsWith(prefix) || message.author.bot){return;}
+
+  // splits by space ' ' and does not error with multiple spaces.
+  const args = message.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
+
+  // handles all incoming events and passes to functions.js
+  functions.eventHandler(args, command, message);
+});
