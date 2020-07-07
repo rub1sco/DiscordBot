@@ -1,4 +1,5 @@
 // set up variables
+require('dotenv').config();
 const Discord = require('discord.js');
 const {prefix, token} = require('../utils/config.json');
 var functions = require('./functions.js');

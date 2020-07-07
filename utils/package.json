@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
     "start": "node src/index.js"
   },
+  "engines": {
+    "node": "12.14.0",
+    "npm": "*"
+  },
   "repository": {
     "type": "git",
     "url": ""
