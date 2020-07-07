@@ -12,7 +12,7 @@ client.once('ready', () => {
 
 // logs into server with token.
 // TODO make token secret before git push or heroku
-client.login(token);
+client.login(process.env.BOT_TOKEN);
 
 
 // on can trigger multiple times
